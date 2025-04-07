@@ -1,0 +1,19 @@
+framework:
+  messenger:
+    transports:
+      doctrine_transport: '%env(MESSENGER_TRANSPORT_DSN)%'
+      sync: 'sync://'
+
+    routing:
+      'App\Products\Application\Event\ProductSaved':
+        - sync
+      'Symfony\Component\Mailer\Messenger\SendEmailMessage':
+        - doctrine_transport
+
+when@test:
+  framework:
+    messenger:
+      transports:
+        # replace with your transport name here (e.g., my_transport: 'in-memory://')
+        # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
+        doctrine_transport: 'in-memory://'

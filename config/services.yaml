@@ -6,19 +6,54 @@
 parameters:
 
 services:
-    # default configuration for services in *this* file
-    _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind:
+      $emailFrom: 'from@test'
+      $emailTo: 'to@test'
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Products/Domain/Model/'
+      - '../src/Products/Domain/Exception/'
+      - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+
+  App\Products\Ui\Controller\:
+    resource: '../src/Products/Ui/Controller/'
+    tags: [ 'controller.service_arguments' ]
+
+  App\Products\Domain\Repository\ProductRepository:
+    '@App\Products\Infrastructure\Persistence\Repository\DoctrineProductRepository'
+
+  App\Products\Domain\Repository\CategoryRepository:
+    '@App\Products\Infrastructure\Persistence\Repository\DoctrineCategoryRepository'
+
+  App\Products\Domain\Repository\ProductCategoryRepository:
+    '@App\Products\Infrastructure\Persistence\Repository\DoctrineProductCategoryRepository'
+
+  App\Products\Application\Service\TransactionManager:
+    '@App\Products\Infrastructure\Services\DoctrineTransactionManager'
+
+  App\Products\Application\Query\GetAllProductsQuery:
+    '@App\Products\Infrastructure\Persistence\Query\DoctrineGetAllProductsQuery'
+
+  App\Products\Application\Query\GetProductViewQuery:
+    '@App\Products\Infrastructure\Persistence\Query\DoctrineGetProductViewQuery'
+
+  App\Products\Application\Event\EventPublisher:
+    '@App\Products\Infrastructure\EventPublisher\MessengerEventPublisher'
+
+when@test:
+  services:
+    Psr\Log\Test\TestLogger:
+      autowire: true
+
+    Psr\Log\LoggerInterface:
+      '@Psr\Log\Test\TestLogger'
