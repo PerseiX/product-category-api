@@ -2,20 +2,19 @@
 
 declare(strict_types=1);
 
-
 namespace App\Products\Application\UseCase\Create;
 
 use App\Products\Application\Event\EventPublisher;
 use App\Products\Application\Event\ProductSaved;
+use App\Products\Application\Repository\CategoryRepository;
+use App\Products\Application\Repository\ProductCategoryRepository;
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Application\Services\TransactionManager;
 use App\Products\Domain\Exception\InvalidPrice;
 use App\Products\Domain\Exception\RestOutOfTheRange;
 use App\Products\Domain\Exception\WholeNegative;
 use App\Products\Domain\Model\Money;
 use App\Products\Domain\Model\Product;
-use App\Products\Domain\Repository\CategoryRepository;
-use App\Products\Domain\Repository\ProductCategoryRepository;
-use App\Products\Domain\Repository\ProductRepository;
 use Ramsey\Uuid\Uuid;
 use Throwable;
 
@@ -27,8 +26,7 @@ final class AddProduct implements AddProductInterface
         private readonly ProductCategoryRepository $productCategoryRepository,
         private readonly TransactionManager        $transactionManager,
         private readonly EventPublisher            $eventPublisher,
-    )
-    {
+    ) {
     }
 
     public function execute(AddProductCommand $addProductCommand): Result

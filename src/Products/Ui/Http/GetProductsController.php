@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Ui\Controller;
+namespace App\Products\Ui\Http;
 
 use App\Products\Application\Query\GetAllProductsQuery;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -15,9 +15,7 @@ final class GetProductsController
     public function __construct(
         private readonly GetAllProductsQuery $query,
         private readonly SerializerInterface $serializer
-    )
-    {
-
+    ) {
     }
 
     #[Route('/api/products', methods: ['GET'])]

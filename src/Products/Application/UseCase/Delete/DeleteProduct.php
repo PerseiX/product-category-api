@@ -5,9 +5,9 @@ declare(strict_types=1);
 
 namespace App\Products\Application\UseCase\Delete;
 
+use App\Products\Application\Repository\ProductCategoryRepository;
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Application\Services\TransactionManager;
-use App\Products\Domain\Repository\ProductCategoryRepository;
-use App\Products\Domain\Repository\ProductRepository;
 use Throwable;
 
 final class DeleteProduct implements DeleteProductInterface
@@ -16,8 +16,7 @@ final class DeleteProduct implements DeleteProductInterface
         private readonly ProductRepository         $productRepository,
         private readonly ProductCategoryRepository $productCategoryRepository,
         private readonly TransactionManager        $transactionManager,
-    )
-    {
+    ) {
     }
 
     public function execute(DeleteProductCommand $updateProductCommand): Result

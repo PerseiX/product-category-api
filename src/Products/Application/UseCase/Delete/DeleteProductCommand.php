@@ -11,7 +11,6 @@ final class DeleteProductCommand
 {
     public function __construct(
         public readonly UuidInterface $id,
-    )
-    {
+    ) {
     }
 }

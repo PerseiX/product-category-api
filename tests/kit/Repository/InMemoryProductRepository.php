@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Infrastructure\Persistence\Repository;
+namespace App\Tests\kit\Repository;
 
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Domain\Model\Product;
-use App\Products\Domain\Repository\ProductRepository;
 use Ramsey\Uuid\UuidInterface;
 
 final class InMemoryProductRepository implements ProductRepository

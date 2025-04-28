@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\unit\Application\UseCase\Delete;
 
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Application\Services\TransactionManager;
 use App\Products\Application\UseCase\Delete\DeleteProduct;
 use App\Products\Application\UseCase\Delete\DeleteProductCommand;
@@ -11,10 +12,9 @@ use App\Products\Application\UseCase\Delete\DeleteProductInterface;
 use App\Products\Application\UseCase\Delete\Result;
 use App\Products\Domain\Model\Money;
 use App\Products\Domain\Model\Product;
-use App\Products\Domain\Repository\ProductRepository;
-use App\Products\Infrastructure\Persistence\Repository\InMemoryProductCategoryRepository;
-use App\Products\Infrastructure\Persistence\Repository\InMemoryProductRepository;
-use App\Tests\kit\InMemoryTransactionManager;
+use App\Tests\kit\Repository\InMemoryProductCategoryRepository;
+use App\Tests\kit\Repository\InMemoryProductRepository;
+use App\Tests\kit\UseCase\InMemoryTransactionManager;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

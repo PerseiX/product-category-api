@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Infrastructure\Persistence\Query;
+namespace App\Tests\kit\Query;
 
 use App\Products\Application\Query\GetAllProductsQuery;
 use App\Products\Application\Query\ProductCollectionView;

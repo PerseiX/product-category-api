@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Infrastructure\Persistence\Query;
+namespace App\Products\Infrastructure\Query;
 
 use App\Products\Application\Query\CategoryCollectionView;
 use App\Products\Application\Query\CategoryView;
@@ -18,14 +18,14 @@ final class DoctrineGetAllProductsQuery implements GetAllProductsQuery
 {
     public function __construct(
         private EntityManagerInterface $entityManager
-    )
-    {
+    ) {
     }
 
     public function execute(): ProductCollectionView
     {
         $products = $this->entityManager->createQueryBuilder()
-            ->select('p.id',
+            ->select(
+                'p.id',
                 'p.name',
                 'p.createdAt',
                 'p.updatedAt',

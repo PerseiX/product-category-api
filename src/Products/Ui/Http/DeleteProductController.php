@@ -2,26 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Ui\Controller;
+namespace App\Products\Ui\Http;
 
-use App\Products\Application\UseCase\Delete\DeleteProduct;
 use App\Products\Application\UseCase\Delete\DeleteProductCommand;
 use App\Products\Application\UseCase\Delete\DeleteProductInterface;
 use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
-use Symfony\Component\HttpKernel\Attribute\MapQueryString;
 use Symfony\Component\Routing\Attribute\Route;
 
 final class DeleteProductController
 {
     public function __construct(
         private readonly DeleteProductInterface $deleteProduct
-    )
-    {
+    ) {
     }
 
     #[Route('/api/products/{id}', methods: ['DELETE'])]

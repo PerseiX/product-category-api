@@ -2,17 +2,19 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\functional\Ui\Controller;
+namespace App\Tests\functional\Ui\Http;
 
 use App\Products\Application\UseCase\Delete\DeleteProductInterface;
 use App\Products\Application\UseCase\Delete\Result;
-use App\Tests\kit\InMemoryDeleteProductUseCase;
+use App\Tests\kit\UseCase\InMemoryDeleteProductUseCase;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class DeleteProductControllerTest extends WebTestCase
 {
     private const URL = '/api/products/%s';
-
+    
+    private KernelBrowser $client;
     private DeleteProductInterface $deleteProduct;
 
     protected function setUp(): void

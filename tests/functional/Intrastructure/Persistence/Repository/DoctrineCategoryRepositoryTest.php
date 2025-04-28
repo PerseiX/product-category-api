@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\functional\Intrastructure\Persistence\Repository;
 
+use App\Products\Application\Repository\CategoryRepository;
 use App\Products\Domain\Model\Category;
-use App\Products\Domain\Repository\CategoryRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;

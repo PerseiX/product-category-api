@@ -15,7 +15,6 @@ final class CategoryView
         public readonly string            $name,
         public readonly DateTimeImmutable $createdAt,
         public readonly DateTimeImmutable $updatedAt
-    )
-    {
+    ) {
     }
 }

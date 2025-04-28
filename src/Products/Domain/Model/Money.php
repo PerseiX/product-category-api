@@ -27,8 +27,7 @@ final readonly class Money
         string $currency,
         int    $whole,
         int    $rest
-    )
-    {
+    ) {
         if ($whole < 0) {
             throw new WholeNegative();
         }

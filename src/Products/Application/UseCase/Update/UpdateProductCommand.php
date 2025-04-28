@@ -14,7 +14,6 @@ final class UpdateProductCommand
         public readonly array         $categories,
         public readonly string        $price,
         public readonly string        $currency,
-    )
-    {
+    ) {
     }
 }

@@ -2,23 +2,25 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\functional\Ui\Controller;
+namespace App\Tests\functional\Ui\Http;
 
 use App\Products\Application\Query\CategoryCollectionView;
 use App\Products\Application\Query\CategoryView;
 use App\Products\Application\Query\GetAllProductsQuery;
 use App\Products\Application\Query\ProductCollectionView;
 use App\Products\Application\Query\ProductView;
-use App\Products\Infrastructure\Persistence\Query\InMemoryGetAllProductsQuery;
+use App\Tests\kit\Query\InMemoryGetAllProductsQuery;
 use DateTime;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class GetProductsControllerTest extends WebTestCase
 {
     private const URL = '/api/products';
 
+    private KernelBrowser $client;
     private GetAllProductsQuery $query;
 
     protected function setUp(): void

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Tests\functional\Intrastructure\Persistence\Repository;
 
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Domain\Model\Category;
 use App\Products\Domain\Model\Money;
 use App\Products\Domain\Model\Product;
 use App\Products\Domain\Model\ProductCategory;
-use App\Products\Domain\Repository\ProductRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;

@@ -10,7 +10,6 @@ final class ProductCollectionView
     /** @param ProductView[] $productCollectionView */
     public function __construct(
         public readonly array $productCollectionView = []
-    )
-    {
+    ) {
     }
 }

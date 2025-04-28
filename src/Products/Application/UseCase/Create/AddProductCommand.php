@@ -15,7 +15,6 @@ final class AddProductCommand
         public readonly string         $currency,
         public readonly array          $categories,
         public readonly ?UuidInterface $id = null
-    )
-    {
+    ) {
     }
 }

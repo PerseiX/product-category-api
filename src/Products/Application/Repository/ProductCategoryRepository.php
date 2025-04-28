@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Domain\Repository;
+namespace App\Products\Application\Repository;
 
 use App\Products\Domain\Model\ProductCategory;
 use Ramsey\Uuid\UuidInterface;
@@ -14,5 +14,4 @@ interface ProductCategoryRepository
     public function delete(ProductCategory $productCategory): void;
 
     public function findAllById(UuidInterface $productId): array;
-
 }

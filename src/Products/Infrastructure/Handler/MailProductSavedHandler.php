@@ -17,8 +17,7 @@ final class MailProductSavedHandler
         private readonly MailerInterface $mailer,
         private readonly string          $emailFrom,
         private readonly string          $emailTo,
-    )
-    {
+    ) {
     }
 
     public function __invoke(ProductSaved $productSaved): void

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Infrastructure\Persistence\Repository;
+namespace App\Tests\kit\Repository;
 
+use App\Products\Application\Repository\ProductCategoryRepository;
 use App\Products\Domain\Model\ProductCategory;
-use App\Products\Domain\Repository\ProductCategoryRepository;
 use Ramsey\Uuid\UuidInterface;
 
 final class InMemoryProductCategoryRepository implements ProductCategoryRepository
@@ -14,12 +14,15 @@ final class InMemoryProductCategoryRepository implements ProductCategoryReposito
 
     public function save(ProductCategory $productCategory): void
     {
-        $this->productCategories[$productCategory->getProductId()->toString()][$productCategory->getCategoryId()] = $productCategory;
+        $this->productCategories[$productCategory->getProductId()->toString()][$productCategory->getCategoryId()]
+            = $productCategory;
     }
 
     public function delete(ProductCategory $productCategory): void
     {
-        unset($this->productCategories[$productCategory->getProductId()->toString()][$productCategory->getCategoryId()]);
+        unset(
+            $this->productCategories[$productCategory->getProductId()->toString()][$productCategory->getCategoryId()]
+        );
     }
 
     public function findAllById(UuidInterface $productId): array

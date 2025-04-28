@@ -14,8 +14,7 @@ final class DoctrineTransactionManager implements TransactionManager
 
     public function __construct(
         private readonly EntityManagerInterface $entityManager
-    )
-    {
+    ) {
     }
 
     /**

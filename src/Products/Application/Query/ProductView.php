@@ -18,8 +18,6 @@ final class ProductView
         public readonly DateTimeImmutable      $createdAt,
         public readonly DateTimeImmutable      $updatedAt,
         public readonly CategoryCollectionView $categoryCollection
-    )
-    {
-
+    ) {
     }
 }

@@ -9,12 +9,12 @@ use App\Products\Application\Query\CategoryView;
 use App\Products\Application\Query\GetAllProductsQuery;
 use App\Products\Application\Query\ProductCollectionView;
 use App\Products\Application\Query\ProductView;
+use App\Products\Application\Repository\ProductCategoryRepository;
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Domain\Model\Category;
 use App\Products\Domain\Model\Money;
 use App\Products\Domain\Model\Product;
 use App\Products\Domain\Model\ProductCategory;
-use App\Products\Domain\Repository\ProductCategoryRepository;
-use App\Products\Domain\Repository\ProductRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
@@ -93,14 +93,12 @@ final class DoctrineGetAllProductsQueryTest extends KernelTestCase
                                 'Category 2',
                                 $this->normalizeDateTime($category2Created),
                                 $this->normalizeDateTime($category2Updated),
-
                             )
                         ]
                     )
                 )
             ]
         ), $queryResponse);
-
     }
 
     public function tearDown(): void
@@ -109,7 +107,7 @@ final class DoctrineGetAllProductsQueryTest extends KernelTestCase
         $this->cleanUpDatabase();
     }
 
-    function normalizeDateTime(DateTimeImmutable $dateTime): DateTimeImmutable
+    private function normalizeDateTime(DateTimeImmutable $dateTime): DateTimeImmutable
     {
         return $dateTime->setTime(
             (int)$dateTime->format('H'),

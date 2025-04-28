@@ -22,6 +22,9 @@ final class MailProductSavedHandlerTest extends KernelTestCase
         $email = $this->getMailerMessage();
 
         $this->assertEmailHtmlBodyContains($email, 'The product has been saved!');
-        $this->assertEmailHtmlBodyContains($email, "The product Awesome product ({$productId->toString()}) has been saved.");
+        $this->assertEmailHtmlBodyContains(
+            $email,
+            "The product Awesome product ({$productId->toString()}) has been saved."
+        );
     }
 }

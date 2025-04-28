@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace App\Tests\unit\Application\UseCase\Create;
 
 use App\Products\Application\Event\EventPublisher;
+use App\Products\Application\Repository\CategoryRepository;
+use App\Products\Application\Repository\ProductCategoryRepository;
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Application\Services\TransactionManager;
 use App\Products\Application\UseCase\Create\AddProduct;
 use App\Products\Application\UseCase\Create\AddProductCommand;
 use App\Products\Application\UseCase\Create\AddProductInterface;
 use App\Products\Application\UseCase\Create\Result;
 use App\Products\Domain\Model\Category;
-use App\Products\Domain\Repository\CategoryRepository;
-use App\Products\Domain\Repository\ProductCategoryRepository;
-use App\Products\Domain\Repository\ProductRepository;
 use App\Products\Infrastructure\EventPublisher\InMemoryEventPublisher;
-use App\Products\Infrastructure\Persistence\Repository\InMemoryCategoryRepository;
-use App\Products\Infrastructure\Persistence\Repository\InMemoryProductCategoryRepository;
-use App\Products\Infrastructure\Persistence\Repository\InMemoryProductRepository;
-use App\Tests\kit\InMemoryTransactionManager;
+use App\Tests\kit\Repository\InMemoryCategoryRepository;
+use App\Tests\kit\Repository\InMemoryProductCategoryRepository;
+use App\Tests\kit\Repository\InMemoryProductRepository;
+use App\Tests\kit\UseCase\InMemoryTransactionManager;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 

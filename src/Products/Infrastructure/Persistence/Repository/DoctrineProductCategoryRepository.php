@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Products\Infrastructure\Persistence\Repository;
 
+use App\Products\Application\Repository\ProductCategoryRepository;
 use App\Products\Domain\Model\ProductCategory;
-use App\Products\Domain\Repository\ProductCategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\UuidInterface;
 

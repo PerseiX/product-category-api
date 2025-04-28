@@ -20,3 +20,6 @@
 ###< symfony/phpunit-bridge ###
 
 .idea
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###

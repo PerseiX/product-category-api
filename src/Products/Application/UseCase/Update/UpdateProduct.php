@@ -7,14 +7,14 @@ namespace App\Products\Application\UseCase\Update;
 
 use App\Products\Application\Event\EventPublisher;
 use App\Products\Application\Event\ProductSaved;
+use App\Products\Application\Repository\CategoryRepository;
+use App\Products\Application\Repository\ProductCategoryRepository;
+use App\Products\Application\Repository\ProductRepository;
 use App\Products\Application\Services\TransactionManager;
 use App\Products\Domain\Exception\InvalidPrice;
 use App\Products\Domain\Exception\RestOutOfTheRange;
 use App\Products\Domain\Exception\WholeNegative;
 use App\Products\Domain\Model\Money;
-use App\Products\Domain\Repository\CategoryRepository;
-use App\Products\Domain\Repository\ProductCategoryRepository;
-use App\Products\Domain\Repository\ProductRepository;
 use Throwable;
 
 final class UpdateProduct implements UpdateProductInterface
@@ -25,8 +25,7 @@ final class UpdateProduct implements UpdateProductInterface
         private readonly ProductCategoryRepository $productCategoryRepository,
         private readonly TransactionManager        $transactionManager,
         private readonly EventPublisher            $eventPublisher,
-    )
-    {
+    ) {
     }
 
     public function execute(UpdateProductCommand $updateProductCommand): Result

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Ui\Controller;
+namespace App\Products\Ui\Http;
 
 use App\Products\Application\Query\GetProductViewQuery;
 use Ramsey\Uuid\Uuid;
@@ -17,9 +17,7 @@ final class GetProductController
     public function __construct(
         private readonly GetProductViewQuery $query,
         private readonly SerializerInterface $serializer
-    )
-    {
-
+    ) {
     }
 
     #[Route('/api/products/{id}', methods: ['GET'])]

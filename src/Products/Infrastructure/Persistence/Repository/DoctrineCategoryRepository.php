@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Products\Infrastructure\Persistence\Repository;
 
+use App\Products\Application\Repository\CategoryRepository;
 use App\Products\Domain\Model\Category;
-use App\Products\Domain\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 final class DoctrineCategoryRepository implements CategoryRepository

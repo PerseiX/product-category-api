@@ -25,8 +25,8 @@ services:
       - '../src/Kernel.php'
 
 
-  App\Products\Ui\Controller\:
-    resource: '../src/Products/Ui/Controller/'
+  App\Products\Ui\Http\:
+    resource: '../src/Products/Ui/Http/'
     tags: [ 'controller.service_arguments' ]
 
   App\Products\Domain\Repository\ProductRepository:
@@ -42,10 +42,10 @@ services:
     '@App\Products\Infrastructure\Services\DoctrineTransactionManager'
 
   App\Products\Application\Query\GetAllProductsQuery:
-    '@App\Products\Infrastructure\Persistence\Query\DoctrineGetAllProductsQuery'
+    '@App\Products\Infrastructure\Query\DoctrineGetAllProductsQuery'
 
   App\Products\Application\Query\GetProductViewQuery:
-    '@App\Products\Infrastructure\Persistence\Query\DoctrineGetProductViewQuery'
+    '@App\Products\Infrastructure\Query\DoctrineGetProductViewQuery'
 
   App\Products\Application\Event\EventPublisher:
     '@App\Products\Infrastructure\EventPublisher\MessengerEventPublisher'

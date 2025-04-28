@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\kit;
+namespace App\Tests\kit\UseCase;
 
 use App\Products\Application\UseCase\Delete\DeleteProductCommand;
 use App\Products\Application\UseCase\Delete\DeleteProductInterface;
