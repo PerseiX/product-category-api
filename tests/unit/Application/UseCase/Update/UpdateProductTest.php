@@ -17,7 +17,7 @@ use App\Products\Application\UseCase\Update\UpdateProductInterface;
 use App\Products\Domain\Model\Category;
 use App\Products\Domain\Model\Money;
 use App\Products\Domain\Model\Product;
-use App\Products\Infrastructure\EventPublisher\InMemoryEventPublisher;
+use App\Tests\kit\EventPublisher\InMemoryEventPublisher;
 use App\Tests\kit\Repository\InMemoryCategoryRepository;
 use App\Tests\kit\Repository\InMemoryProductCategoryRepository;
 use App\Tests\kit\Repository\InMemoryProductRepository;

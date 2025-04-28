@@ -14,7 +14,7 @@ use App\Products\Application\UseCase\Create\AddProductCommand;
 use App\Products\Application\UseCase\Create\AddProductInterface;
 use App\Products\Application\UseCase\Create\Result;
 use App\Products\Domain\Model\Category;
-use App\Products\Infrastructure\EventPublisher\InMemoryEventPublisher;
+use App\Tests\kit\EventPublisher\InMemoryEventPublisher;
 use App\Tests\kit\Repository\InMemoryCategoryRepository;
 use App\Tests\kit\Repository\InMemoryProductCategoryRepository;
 use App\Tests\kit\Repository\InMemoryProductRepository;

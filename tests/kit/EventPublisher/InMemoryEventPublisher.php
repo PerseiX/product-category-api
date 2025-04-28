@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Infrastructure\EventPublisher;
+namespace App\Tests\kit\EventPublisher;
 
 use App\Products\Application\Event\Event;
 use App\Products\Application\Event\EventPublisher;
