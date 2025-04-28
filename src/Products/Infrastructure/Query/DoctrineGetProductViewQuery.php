@@ -49,6 +49,7 @@ final class DoctrineGetProductViewQuery implements GetProductViewQuery
         if ([] === $products) {
             return null;
         }
+        $categoryCollection = [];
 
         foreach ($products as $product) {
             $categoryCollection = [];

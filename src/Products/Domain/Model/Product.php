@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Products\Domain\Model;
 
 use DateTimeImmutable;
-use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;
@@ -25,10 +24,10 @@ final class Product
     private Money $price;
 
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
-    private DateTimeInterface $createdAt;
+    private DateTimeImmutable $createdAt;
 
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
-    private DateTimeInterface $updatedAt;
+    private DateTimeImmutable $updatedAt;
 
     public function __construct(UuidInterface $id, string $name, Money $price)
     {

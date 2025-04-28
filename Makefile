@@ -26,3 +26,9 @@ install:
 stop:
 	@echo "${GREEN}Cleaning after tests...${RESET}"
 	docker compose down --remove-orphans
+
+.PHONY: code-quality
+code-quality:
+	@echo "${GREEN}Quality during verification...${RESET}"
+	docker compose run --rm --no-deps --remove-orphans --name code-quality product_api vendor/phpro/grumphp-shim/grumphp.phar run
+	docker compose run --rm --no-deps --remove-orphans --name code-quality product_api bin/phpunit

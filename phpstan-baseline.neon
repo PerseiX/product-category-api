@@ -1,0 +1,43 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Category\:\:\$createdAt is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Category.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Category\:\:\$name is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Category.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Category\:\:\$updatedAt is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Category.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Category\:\:\$value is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Category.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Money\:\:\$currency is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Money.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Money\:\:\$rest is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Money.php
+
+		-
+			message: '#^Property App\\Products\\Domain\\Model\\Money\:\:\$whole is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Products/Domain/Model/Money.php
